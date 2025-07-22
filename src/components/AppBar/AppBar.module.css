@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #2a363b;
+  position: sticky; /*або fixed */
+  top: 0;
+
+  background-color: white; /* або інший фон */
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* для кращого вигляду */
+}

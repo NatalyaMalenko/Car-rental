@@ -1,0 +1,47 @@
+.form {
+  width: 320px;
+  top: 0;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.input {
+  margin: 0 auto;
+  width: 400px;
+  padding: 8px 12px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.input:focus {
+  outline: none;
+}
+.loginBtn {
+  background-color: #059d81;
+  color: #ffffff;
+  transition: background-color 250ms linear;
+}
+.loginBtn:focus,
+.loginBtn:hover {
+  outline: none;
+  border: #0a5043;
+  background-color: #0a5043;
+}
