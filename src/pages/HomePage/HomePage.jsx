@@ -1,3 +1,4 @@
+import Button from "../../components/Button/Button.jsx";
 import css from "./HomePage.module.css";
 
 export default function HomePage() {
@@ -7,6 +8,8 @@ export default function HomePage() {
       <p className={css.text}>
         Reliable and budget-friendly rentals for any journey
       </p>
+
+      <Button>View Catalog</Button>
     </div>
   );
 }
