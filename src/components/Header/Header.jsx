@@ -6,14 +6,24 @@ const Header = () => {
       <div className={css.headerContainer}>
         <div className={css.logo}>
           <svg width="102" height="16">
-            <use href="../../../public/Logo.svg" />
+            <use href="/Logo.svg" />
           </svg>
         </div>
         <nav className={css.nav}>
-          <NavLink className={css.link} to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${css.link} ${isActive ? css.current : ""}`
+            }
+          >
             Home
           </NavLink>
-          <NavLink className={css.link} to="/catalog">
+          <NavLink
+            to="/catalog"
+            className={({ isActive }) =>
+              `${css.link} ${isActive ? css.current : ""}`
+            }
+          >
             Catalog
           </NavLink>
         </nav>
