@@ -1,29 +1,20 @@
-// import { useEffect } from "react";
-// import { useDispatch, useSelector } from "react-redux";
-// import PageTitle from "../../components/PageTitle/PageTitle";
-// import ContactList from "../../components/ContactList/ContactList";
-// import ContactForm from "../../components/ContactForm/ContactForm";
-// import { fetchContacts } from "../../redux/contacts/operations";
-// import { selectLoading } from "../../redux/contacts/selectors";
-// import SearchBox from "../../components/SearchBox/SearchBox";
-// import css from "../../components/PageTitle/PageTitle.module.css";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCars } from "../../redux/cars/operations";
+import { selectVisibleCars } from "../../redux/cars/selectors";
+import CarList from "../../components/CarList/CarList.jsx";
 
-// export default function ContactsPage() {
-//   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectLoading);
+export default function CatalogPage() {
+  const dispatch = useDispatch();
+  const cars = useSelector(selectVisibleCars);
 
-//   useEffect(() => {
-//     dispatch(fetchContacts());
-//   }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, [dispatch]);
 
-//   return (
-//     <div>
-//       <PageTitle className={css.heading}>Your contacts</PageTitle>
-//       <ContactForm />
-//       <div>{isLoading && "Request in progress..."}</div>
-//       <SearchBox />
-//       <ContactList />
-//     </div>
-//   );
-// }
-// // className={css.contactsContainer}
+  return (
+    <div>
+      {cars.length > 0 ? <CarList cars={cars} /> : <p>No cars found</p>}
+    </div>
+  );
+}

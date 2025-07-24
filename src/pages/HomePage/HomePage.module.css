@@ -6,7 +6,6 @@
   text-align: center;
 
   width: 100%;
-  max-width: 1440px;
   min-height: 100vh;
 
   margin: 0;
@@ -15,7 +14,7 @@
   font-family: "Manrope", sans-serif;
   line-height: 1.6;
 
-  background-image: url(../../../public/image/heroBackground.jpg);
+  background-image: url(../../../image/heroBackground.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

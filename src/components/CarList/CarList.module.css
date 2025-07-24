@@ -1,4 +1,4 @@
-.containerContactList {
+.containerCarList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,7 +9,7 @@
   margin: 0 auto;
   gap: 15px;
 }
-.contactItem {
+.carItem {
   display: flex;
   flex-direction: column;
   justify-content: center;

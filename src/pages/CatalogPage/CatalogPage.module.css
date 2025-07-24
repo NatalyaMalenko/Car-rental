@@ -1,4 +1,4 @@
-.contactsContainer {
+.catalogContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,17 +9,10 @@
   overflow: hidden;
 }
 
-.contacts-scroll-area {
+.catalog-scroll-area {
   flex-grow: 1;
   overflow-y: auto;
   padding: 16px;
   margin-top: 16px;
   border-top: 1px solid #ccc;
-}
-.title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #028f2cea;
 }
