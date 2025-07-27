@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getCarById } from "../../redux/cars/operations";
+import { getCarById } from "../../redux/cars/operations"; // ⬅️ імпорт функції, не thunk
 import CarDetailsCard from "../../components/CarDetailsCard/CarDetailsCard.jsx";
 
 export default function CarDetailsPage() {
@@ -10,7 +10,7 @@ export default function CarDetailsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchCarById = async () => {
+    const fetchData = async () => {
       try {
         setLoading(true);
         const data = await getCarById(id);
@@ -22,7 +22,7 @@ export default function CarDetailsPage() {
       }
     };
 
-    fetchCarById();
+    fetchData();
   }, [id]);
 
   if (loading) return <p>Loading...</p>;

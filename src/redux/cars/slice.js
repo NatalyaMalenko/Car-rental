@@ -1,20 +1,9 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { fetchCars } from "./operations";
-
-import { selectNameFilter } from "../filters/selectors";
-import { selectCars } from "./selectors";
-
-export const selectVisibleCars = createSelector(
-  [selectCars, selectNameFilter],
-  (cars, filter) => {
-    return cars.filter((car) =>
-      (car.make + " " + car.model).toLowerCase().includes(filter.toLowerCase())
-    );
-  }
-);
 
 const initialState = {
   items: [],
+  currentCar: null, // додано для детального авто
   isLoading: false,
   error: null,
 };
@@ -22,11 +11,19 @@ const initialState = {
 const carsSlice = createSlice({
   name: "cars",
   initialState,
-  reducers: {},
+  reducers: {
+    clearCurrentCar(state) {
+      state.currentCar = null;
+      state.error = null;
+      state.isLoading = false;
+    },
+  },
   extraReducers: (builder) => {
     builder
+      // обробка завантаження списку авто
       .addCase(fetchCars.pending, (state) => {
         state.isLoading = true;
+        state.error = null;
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -38,5 +35,7 @@ const carsSlice = createSlice({
       });
   },
 });
+
+export const { clearCurrentCar } = carsSlice.actions;
 
 export default carsSlice.reducer;

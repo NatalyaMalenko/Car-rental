@@ -14,11 +14,11 @@
   font-family: "Manrope", sans-serif;
   line-height: 1.6;
 
-  background-image: url(../../../image/heroBackground.jpg);
+  background-image: url("/heroBackground.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h1 {

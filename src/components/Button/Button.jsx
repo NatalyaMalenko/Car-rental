@@ -1,10 +1,11 @@
 import css from "./Button.module.css";
 
-const Button = ({ children }) => {
+const Button = ({ children, onClick }) => {
   return (
-    <div>
-      <button className={css.button}>{children}</button>
-    </div>
+    <button className={css.button} onClick={onClick}>
+      {children}
+    </button>
   );
 };
+
 export default Button;
