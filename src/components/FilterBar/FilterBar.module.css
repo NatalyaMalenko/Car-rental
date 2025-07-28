@@ -1,0 +1,55 @@
+.filterBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  background-color: white;
+  border-radius: 14px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.customSelect {
+  appearance: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  min-width: 160px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.customSelect:focus {
+  outline: none;
+  border-color: #2684ff;
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 14px;
+  width: 100px;
+  background-color: #f9f9f9;
+}
+
+.searchButton {
+  background-color: #3470ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchButton:hover {
+  background-color: #255be3;
+}
