@@ -3,7 +3,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://car-rental-api.goit.global";
 
-// Thunk для каталогу
 export const fetchCars = createAsyncThunk(
   "cars/fetchCars",
   async (_, thunkAPI) => {
@@ -16,7 +15,6 @@ export const fetchCars = createAsyncThunk(
   }
 );
 
-// ⬇️ ОКРЕМА функція для деталей однієї машини (НЕ thunk)
 export const getCarById = async (id) => {
   const response = await axios.get(`/cars/${id}`);
   return response.data;

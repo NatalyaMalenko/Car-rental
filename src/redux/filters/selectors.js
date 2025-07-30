@@ -1,3 +1,4 @@
+export const selectNameFilter = (state) => state.filters.name || "";
 export const selectVisibleCars = (state) => {
   const { brand, price, mileageFrom, mileageTo } = state.filters;
   return state.cars.items.filter((car) => {

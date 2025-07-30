@@ -1,7 +1,6 @@
 .card {
   border: 1px solid #e1e1e1;
   border-radius: 12px;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -9,10 +8,39 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.imageWrapper {
+  position: relative;
+}
+
 .image {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.favoriteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
 }
 
 .info {

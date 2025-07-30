@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCars } from "../../redux/cars/operations";
 import { useEffect } from "react";
 import { selectVisibleCars } from "../../redux/cars/selectors";
+import Spinner from "../../components/Loader/Loader.jsx";
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function CatalogPage() {
   return (
     <>
       <FilterBar />
+      <Spinner />
       <CarList cars={cars} />
     </>
   );

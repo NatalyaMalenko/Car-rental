@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getCarById } from "../../redux/cars/operations"; // ⬅️ імпорт функції, не thunk
+import { getCarById } from "../../redux/cars/operations";
 import CarDetailsCard from "../../components/CarDetailsCard/CarDetailsCard.jsx";
+import Spinner from "../../components/Loader/Loader.jsx";
 
 export default function CarDetailsPage() {
   const { id } = useParams();
@@ -25,7 +26,7 @@ export default function CarDetailsPage() {
     fetchData();
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
   if (!car) return <p>Car not found.</p>;
 

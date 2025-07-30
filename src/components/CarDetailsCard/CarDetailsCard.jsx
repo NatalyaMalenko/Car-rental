@@ -1,3 +1,6 @@
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import css from "./CarDetailsCard.module.css";
 
 export default function CarCard({ car }) {
@@ -19,6 +22,8 @@ export default function CarCard({ car }) {
     engineSize,
   } = car;
 
+  const [selectedDate, setSelectedDate] = useState(null);
+
   const city = address.split(",")[1]?.trim();
   const country = address.split(",")[2]?.trim();
 
@@ -31,7 +36,15 @@ export default function CarCard({ car }) {
           <p>Stay connected! We are always ready to help you.</p>
           <input type="text" placeholder="Name*" required />
           <input type="email" placeholder="Email*" required />
-          <input type="date" placeholder="Booking date" />
+          <DatePicker
+            selected={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Booking date"
+            minDate={new Date()}
+            maxDate={new Date("2026-12-31")}
+            className={css.dateInput}
+          />
           <textarea placeholder="Comment" />
           <button type="submit">Send</button>
         </form>

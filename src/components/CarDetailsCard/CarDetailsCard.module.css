@@ -58,3 +58,11 @@
   content: "✔ ";
   color: #3f85f5;
 }
+.dateInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-bottom: 10px;
+}

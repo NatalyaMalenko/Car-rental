@@ -1,7 +1,9 @@
 import { lazy, Suspense } from "react";
-import { Routes, Route, useLocation } from "react-router-dom"; // ✅ ТУТ useLocation і Routes
+import { Routes, Route, useLocation } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { useEffect } from "react";
+import Spinner from "../Loader/Loader.jsx";
+
 console.log("App loaded");
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const CarDetailsPage = lazy(() =>
@@ -20,11 +22,12 @@ export default function App() {
 
   return (
     <Layout>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Spinner />}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/catalog/:id" element={<CarDetailsPage />} />
+          <Route path="*" redirectTo="/" />
         </Routes>
       </Suspense>
     </Layout>

@@ -3,7 +3,7 @@ import { fetchCars } from "./operations";
 
 const initialState = {
   items: [],
-  currentCar: null, // додано для детального авто
+  currentCar: null,
   isLoading: false,
   error: null,
 };
@@ -20,7 +20,6 @@ const carsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // обробка завантаження списку авто
       .addCase(fetchCars.pending, (state) => {
         state.isLoading = true;
         state.error = null;
